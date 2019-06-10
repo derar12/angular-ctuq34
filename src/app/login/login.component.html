@@ -1,0 +1,25 @@
+
+<h3>Login</h3>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }} </span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+
+<form [formGroup]="passwordForm" (ngSubmit)="onSubmit(passwordForm.value)">
+
+ <div>
+    <label>Password</label>
+    <input type="text" formControlName="password">
+   <!-- <div *ngIf="nameError">please enter name</div> -->
+  </div>
+  <div>
+    <label>Password Check</label>
+    <input type="text" formControlName="passwordCheck">
+  
+  </div>
+
+  <button class="button" [disabled]="!passwordForm.valid" type="submit">Check</button>
+
+</form>
